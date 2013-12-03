@@ -28,13 +28,12 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     
-<script type="application/javascript" src="<?php print DOKU_TPL; ?>jquery-1.10.2.min.js"></script>    
 <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <link href="<?php print DOKU_TPL; ?>css/ui.layout.css" rel="stylesheet">
 <script  src="<?php print DOKU_TPL; ?>layout.js" type="text/javascript"></script> 
 <script type="text/javascript">
-            $(document).ready(function() {
-            $('#container').layout({            
+            JQuery(document).ready(function() {
+            Jquery('#container').layout({            
             maskContents: true,
             center: {applyDefaultStyles: true},
             west: {applyDefaultStyles: true, minSize: 300}
@@ -45,9 +44,9 @@ $showSidebar = $hasSidebar && ($ACT=='show');
             //el.width( el.width() + 10 );
             } );
             
-    $(".codo_side_content [href]").each(function() {
+    JQuery(".codo_side_content [href]").each(function() {
     if (this.href == window.location.href) {
-        $(this).addClass("codo_active");
+        JQuery(this).addClass("codo_active");
         }
     });
 
@@ -56,16 +55,16 @@ $showSidebar = $hasSidebar && ($ACT=='show');
         //console.log(x++);    
             
            
-           $(elem).find( ">li>div>a" ).each(function(){
+           JQuery(elem).find( ">li>div>a" ).each(function(){
                
-                console.log($(this));
-               $(this).html(times+$(this).html())
+                console.log(JQuery(this));
+               JQuery(this).html(times+JQuery(this).html())
                
                });
                
-            $(elem).find( ">li>ul" ).each(function(){
+            JQuery(elem).find( ">li>ul" ).each(function(){
                 
-               apply_space($(this),times+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+               apply_space(JQuery(this),times+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
                 
             });   
             
@@ -74,7 +73,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
         }
         
         
-        apply_space($('.codo_side_content >ul'),'&nbsp;');
+        apply_space(JQuery('.codo_side_content >ul'),'&nbsp;');
 
             
             
